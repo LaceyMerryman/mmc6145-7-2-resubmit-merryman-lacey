@@ -70,6 +70,7 @@ export default function Signup(props) {
             type="text"
             name="username"
             id="username"
+            autoComplete="username"
             onChange={handleChange}
             value={username}
           />
@@ -79,6 +80,7 @@ export default function Signup(props) {
             type="password"
             name="password"
             id="password"
+            autoComplete="password"
             onChange={handleChange}
             value={password}
           />
@@ -87,6 +89,7 @@ export default function Signup(props) {
             type="password"
             name="confirm-password"
             id="confirm-password"
+            autoComplete="confirm-password"
             onChange={handleChange}
             value={confirmPassword}
           />

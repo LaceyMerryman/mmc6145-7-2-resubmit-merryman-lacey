@@ -77,6 +77,7 @@ export default function Login(props) {
             type="text"
             name="username"
             id="username"
+            autoComplete="username"
             onChange={handleChange}
             value={username}
           />
@@ -87,6 +88,7 @@ export default function Login(props) {
             type="password"
             name="password"
             id="password"
+            autoComplete="current-password"
             onChange={handleChange}
             value={password}
           />
