@@ -1,14 +1,14 @@
 ![Image](public/banner.jpg)
 
-# Book Saver App
+# Book Nook
 ## Description:
 Are you ever asked "What are you reading at the moment?" and suddenly, your mind goes completely blank?
 
-The Book Saver App is your new favorite app! Developed for those who can't seem to remember exactly ALL of the book titles or authors in their current reading list. 
+The Book Nook App is your new favorite app! Developed for those who can't seem to remember exactly ALL of the book titles or authors in their current reading list. 
 
 Users can search for titles and authors, save books to their Saved Books section, and delete books from their list if needed. 
 
-Turn to your Book Saver when you need a little reminder or when you're looking forward to the next great read!
+Turn to your Book Nook when you need a little reminder or when you're looking forward to the next great read!
 
 ---
 ## Logo
@@ -27,10 +27,10 @@ Turn to your Book Saver when you need a little reminder or when you're looking f
 > Users may use the Login page to login to their account to access their Saved Books section!
 
 ---
-**Book Saver Search**
+**Book Nook Search**
 
 ![image](public/BookSaverSearch.png)
-> When searching for a book, you need only enter the book title or author name and Book Saver will utilize OpenLibraryAPI to search for your book. 
+> When searching for a book, you need only enter the book title or author name and Book Nook will utilize OpenLibraryAPI to search for your book. 
 
 > Select "Save Book" when you'd like to add the book to your Saved Books.
 

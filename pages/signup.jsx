@@ -50,7 +50,7 @@ export default function Signup(props) {
       <Head>
         <title>Book Nook</title>
         <meta name="description" content="A simple app for searching and saving books" />
-        <link rel="icon" href="/BookSaverIcon.ico" />
+        <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <main className={styles.main}>

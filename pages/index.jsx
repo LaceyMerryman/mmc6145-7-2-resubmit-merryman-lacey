@@ -131,7 +131,7 @@ export default function Home(props) {
       <Head>
         <title>Book Nook</title>
         <meta name="description" content="A simple app for searching and saving books" />
-        <link rel="icon" href="/BookSaverIcon.ico" />
+        <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <Header isLoggedIn={props.isLoggedIn} username={props?.user?.username} />
