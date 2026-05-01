@@ -1,41 +1,73 @@
 ![Image](public/banner.jpg)
 
 # Book Nook
+
 ## Description:
-Are you ever asked "What are you reading at the moment?" and suddenly, your mind goes completely blank?
+Are you ever asked, "What are you reading at the moment?" and suddenly, your mind goes completely blank???
 
-The Book Nook App is your new favorite app! Developed for those who can't seem to remember exactly ALL of the book titles or authors in their current reading list. 
+Then the Book Nook App is your new favorite app! Developed for those who can't seem to remember exactly ALL of the book titles or authors in their current reading list. 
 
-Users can search for titles and authors, save books to their Saved Books section, and delete books from their list if needed. 
+Users can create their own profile, search for titles and authors, save books to their Saved Books reading list, and delete books from their list if needed. 
 
-Turn to your Book Nook when you need a little reminder or when you're looking forward to the next great read!
+Turn to your Book Nook when you need a little reminder of what you've read or when you're looking forward to the next great read!
 
 ---
-## Logo
+## Book Nook Brand Marks
+**Logo**
+
 ![Image](public/BookNookLogo.png)
 
-## Functions
-**Signup**
+**Favicon**
 
-![image](public/Signup.png)
-> New users may use the Signup page to create a new account in order to begin adding books to their Saved Books!
+![Image](public/Favicon.png)
+
+**Color Scheme**
+
+light-mode:
+* Background: #f8f4ee (tan)
+* Buttons: #2f5d50 (green)
+* Text-color: #222 (grey/black)
+
+dark-mode:
+* Background: #000 (black)
+* Buttons: #2f5d50 (green)
+* Text-color: #f5f5f5 (white)
 
 ---
-**Login**
+## Functions & App-flow
+**HOME PAGE**
 
-![image](public/Login.png)
-> Users may use the Login page to login to their account to access their Saved Books section!
+![image](public/Home.png)
+> When accessing Book Nook, users are first taken to this starting page where they are prompted to login or sign up before they can begin searching and saving books to their reading list. 
 
 ---
-**Book Nook Search**
+**LOGIN PAGE**
 
-![image](public/BookSaverSearch.png)
+![image](public/LoginPage.png)
+> Users may use the Login page to login to their account to access their Saved Books collection!
+
+---
+**LOGIN to HOME**
+
+![image](public/LogintoHome.png)
+> After logging in, users are routed to a new page where they can continue to the Home page or Logout.
+
+---
+**SIGN-UP PAGE**
+
+![image](public/SignUpPage.png)
+> New users may use the Signup page to create a new account in order to begin adding books to their Saved Books! The browser should save the login info for faster login next time. 
+
+---
+**BOOK NOOK SEARCH**
+
+![image](public/SearchPage.png)
 > When searching for a book, you need only enter the book title or author name and Book Nook will utilize OpenLibraryAPI to search for your book. 
 
 > Select "Save Book" when you'd like to add the book to your Saved Books.
 
 ---
-**Saved Books**
+**SAVED BOOKS**
 
 ![image](public/SavedBooks.png)
 > When the Save Book button is selected, the book will appear at the bottom of the page as a list. Users can delete any book they'd like if it was a mistake or they don't wish to keep it!
@@ -60,6 +92,10 @@ Turn to your Book Nook when you need a little reminder or when you're looking fo
 5. Allow time to load then view your new site.
 6. Test the application is running smoothly. Troubleshoot any issues like missing environment variables or incorrect repository and begin using your website!
 
+**Making Changes to App**
+1. If changes or updates are needed, utilize Visual Studio Code to make changes and push to Git before testing the Vercel app in production.
+2. Environmental Variables are found below.
+
 ---
 ## Features
 * **Home button:** takes user home
@@ -70,12 +106,16 @@ Turn to your Book Nook when you need a little reminder or when you're looking fo
 * **Logout button:** logout of your experience until next time
 * **Styling:** enjoy the calm colors of the application, styled to be easy on the eyes similarly to reading
 * **API:** utilizes OpenLibraryAPI to search for books
+* **Mobile-Responsive:** the app will resize and respond to differing screen display sizes
+* **Dark-mode:** if a user prefers dark-mode, the app will respond appropriately with a dark-mode friendly display
 
 ---
 ## Tech Stack
 * Next.js
 * MongoDB
 * React
+* GitHub
+* Visual Studio Code
 * Open Library API
 * CSS Modules
 * Vercel
@@ -95,19 +135,20 @@ Turn to your Book Nook when you need a little reminder or when you're looking fo
 
 ---
 ## Future Improvements
+* Customize user profile with info, avatar, genres, goals, etc.
 * Add Saved Books page
-* Be able to leave a review of each book
+* Be able to leave a personal review of each book
 * Be able to give a star rating to each book
 * Add read/unread status
 * Add search filters
 * Add book cover images
-* Workshop new/catchy name for the app
+* Add affiliate links to external sites to purchase books
 
 ---
 ## Author
 **Lacey Merryman**
 
-Graduate Student, Unviersity of Florida
+Graduate Student, University of Florida
 
 *Expected 2026*
 

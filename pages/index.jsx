@@ -134,6 +134,7 @@ export default function Home(props) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
+      <div className={styles.page}>
       <Header isLoggedIn={props.isLoggedIn} username={props?.user?.username} />
 
       <main className={styles.main}>
@@ -223,6 +224,7 @@ export default function Home(props) {
           />
           <p>Book Nook</p>
       </footer>
+      </div>
     </div>
   );
 }

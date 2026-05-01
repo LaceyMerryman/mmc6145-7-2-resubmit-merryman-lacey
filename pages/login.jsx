@@ -63,7 +63,7 @@ export default function Login(props) {
       <main className={styles.main}>
         <img src="/banner.jpg" alt="Book Banner" className={styles.banner} />
         <h1 className={styles.title}>
-          Welcome back to Book Nook!</h1>
+          Welcome to Book Nook!</h1>
           <p className={styles.description}>
             Login below to continue building your reading list</p>
 
