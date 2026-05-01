@@ -40,5 +40,17 @@ export default async function handler(req, res) {
     }
   }
 
+  if (method === 'DELETE') {
+    try {
+      const { id } = req.query;
+    
+      await Book.findByIdAndDelete(id);
+  
+      return res.status(200).json({ message: 'Book deleted' });
+    } catch (error) {
+      return res.status(500).json({ error: 'Failed to delete book' });
+    }
+  }
+
   return res.status(405).json({ error: 'Method not allowed' });
 }

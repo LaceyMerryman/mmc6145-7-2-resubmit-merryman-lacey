@@ -7,7 +7,7 @@ import sessionOptions from "../config/session";
 import styles from "../styles/Home.module.css";
 import Header from "../components/header";
 import useLogout from "../hooks/useLogout";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export const getServerSideProps = withIronSessionSsr(
   async function getServerSideProps({ req }) {
@@ -32,6 +32,7 @@ export default function Home(props) {
   const [searchResults, setSearchResults] = useState([]);
   const [savedBooks, setSavedBooks] = useState([]);
   const [message, setMessage] = useState("");
+  const [savedTitles, setSavedTitles] = useState([]);
 
   async function handleSearch(event) {
     event.preventDefault();
@@ -64,17 +65,50 @@ export default function Home(props) {
       const data = await response.json();
 
       setMessage(data.message);
+      setSavedTitles([...savedTitles, book.title]);
+      loadSavedBooks();
     } catch (error) {
       setMessage("Error saving book");
     }
   }
 
+  async function deleteBook(id) {
+    try {
+      const response = await fetch(`/api/books?id=${id}`, {
+        method: "DELETE",
+      });
+
+      const data = await response.json();
+
+      setMessage(data.message);
+      loadSavedBooks();
+    } catch (error) {
+      setMessage("Error deleting book")
+    }
+  }
+
+  async function loadSavedBooks() {
+    try {
+      const response = await fetch("/api/books");
+      const data = await response.json();
+
+      setSavedBooks(data);
+      } catch (error) {
+      setMessage("Error loading saved books");
+      }
+    }
+
+    useEffect(() => {
+      loadSavedBooks();
+    }, []);
+
   return (
     <div className={styles.container}>
       <Head>
+        <img src="/banner.jpg" alt="Book Banner" className={styles.banner} />
         <title>Book Saver</title>
         <meta name="description" content="A simple app for searching and saving books" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/BookSaverIcon.ico" />
       </Head>
 
       <Header isLoggedIn={props.isLoggedIn} username={props?.user?.username} />
@@ -85,45 +119,64 @@ export default function Home(props) {
           <p className={styles.description}>
             Search for books and save titles to a simple reading list.</p>
 
-          <form onSubmit={handleSearch}>
+          <form className={styles.form} onSubmit={handleSearch}>
             <input
-            type="text"
-            value={searchTerm}
-            onChange={(event) => setSearchTerm(event.target.value)}
-            placeholder="Search for a book"
+              className={styles.input}
+              type="text"
+              value={searchTerm}
+              onChange={(event) => setSearchTerm(event.target.value)}
+              placeholder="Search titles or authors"
             />
-            <button type="submit">Search</button>
+
+            <button className={styles.button} type="submit">Search</button>
           </form>
 
-          <section>
+          <section className={styles.section}>
             <h2>Search Results</h2>
 
+            <div className={styles.cardGrid}>
             {searchResults.map((book, index) => (
-              <div key={index}>
+              <div className={styles.bookCard} key={index}>
                 <h3>{book.title}</h3>
                 <p>{book.author}</p>
-                <button type="button" onClick={() => saveBook(book)}>
-                  Save Book
+                <button className={styles.button} type="button" onClick={() => saveBook(book)}>
+                {savedTitles.includes(book.title) ? "Saved!" : "Save Book"}
                 </button>
                 </div>
             ))}
+            </div>
 
             {message && <p>{message}</p>}
-
           </section>
+
+          <section className={styles.section}>  
+            <h2>Saved Books</h2>
+
+            <div className={styles.cardGrid}>
+            {savedBooks.map((book) => (
+              <div className={styles.bookCard} key={book._id}>
+                <h3>{book.title}</h3>
+                <p>{book.author}</p>
+
+                <button
+              className={styles.button}
+              type="button"
+              onClick={() => deleteBook(book._id)}>
+              Delete</button>
+              </div>
+            ))}
+            </div>
+            </section>
       </main>
 
       <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{" "}
-          <span className={styles.logo}>
-            <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-          </span>
-        </a>
+        <Image
+          src="/BookSaverIcon.png"
+          alt="Book Saver Logo"
+          width={60}
+          height={60}
+          />
+          <p>Booker Saver</p>
       </footer>
     </div>
   );
