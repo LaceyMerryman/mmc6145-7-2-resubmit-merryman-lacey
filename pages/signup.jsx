@@ -89,7 +89,7 @@ export default function Signup(props) {
             type="password"
             name="confirm-password"
             id="confirm-password"
-            autoComplete="confirm-password"
+            autoComplete="new-password"
             onChange={handleChange}
             value={confirmPassword}
           />
