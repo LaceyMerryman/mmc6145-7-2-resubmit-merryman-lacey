@@ -33,6 +33,24 @@ export default function Home(props) {
   const [savedBooks, setSavedBooks] = useState([]);
   const [message, setMessage] = useState("");
 
+  async function handleSearch(event) {
+    event.preventDefault();
+
+    setMessage("");
+
+    try {
+      const response = await fetch(
+        `/api/books?q=${encodeURIComponent(searchTerm)}`
+      );
+
+      const data = await response.json();
+
+      setSearchResults(data);
+    } catch (error) {
+      setMessage("Error searching for books");
+    }
+  }
+
   return (
     <div className={styles.container}>
       <Head>
@@ -49,7 +67,7 @@ export default function Home(props) {
           <p className={styles.description}>
             Search for books and save titles to a simple reading list.</p>
 
-          <form>
+          <form onSubmit={handleSearch}>
             <input
             type="text"
             value={searchTerm}
@@ -58,6 +76,16 @@ export default function Home(props) {
             />
             <button type="submit">Search</button>
           </form>
+
+          <section>
+            <h2>Search Results</h2>
+
+            {searchResults.map((book, index) => (
+              <div key={index}>
+                <h3>{book.title}</h3>
+                <p>{book.author}</p></div>
+            ))}
+          </section>
       </main>
 
       <footer className={styles.footer}>
