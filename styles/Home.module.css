@@ -54,15 +54,11 @@
   font-size: 4rem;
 }
 
-.title,
-.description {
-  text-align: center;
-}
-
 .description {
   margin: 1.5rem 0;
   line-height: 1.5;
   font-size: 1.5rem;
+  text-align: center;
 }
 
 .code {
@@ -85,7 +81,8 @@
   margin: 1rem;
   padding: 1.5rem;
   text-align: left;
-  color: inherit;
+  color: #222;
+  background: white;
   text-decoration: none;
   border: 1px solid #eaeaea;
   border-radius: 10px;
@@ -123,8 +120,9 @@
 }
 
 .bookCard {
-  background: white;
-  border: 1px solid #ece7df;
+  background: var(--card-bg);
+  color: var(--text);
+  border: 1px solid var(--border);
   border-radius: 14px;
   padding: 18px;
   text-align: left;
