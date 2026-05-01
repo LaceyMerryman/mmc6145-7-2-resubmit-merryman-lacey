@@ -9,6 +9,10 @@ const BookSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
+    username: {
+        type: String,
+        required: true,
+    },
 });
 
 export default mongoose.models.Book || mongoose.model('Book', BookSchema);
