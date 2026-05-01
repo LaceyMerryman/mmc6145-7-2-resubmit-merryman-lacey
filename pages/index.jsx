@@ -100,6 +100,10 @@ export default function Home(props) {
   }
 
   async function loadSavedBooks() {
+    if (!props.isLoggedIn) {
+      return;
+    }
+    
     try {
       const response = await fetch("/api/books");
       const data = await response.json();
@@ -117,8 +121,9 @@ export default function Home(props) {
   }
 
     useEffect(() => {
-      if (props.isLoggedIn) {}
+      if (props.isLoggedIn) {
         loadSavedBooks();
+      }
     }, [props.isLoggedIn]);
 
   return (
