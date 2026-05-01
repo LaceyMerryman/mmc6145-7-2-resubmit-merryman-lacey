@@ -72,6 +72,8 @@ dark-mode:
 ![image](public/SavedBooks.png)
 > When the Save Book button is selected, the book will appear at the bottom of the page as a list. Users can delete any book they'd like if it was a mistake or they don't wish to keep it!
 
+> Saved books will save after logging out of the user's session and loggin back in.
+
 ---
 ## Installation Instructions
 **If deploying locally:**
@@ -121,6 +123,8 @@ dark-mode:
 * CSS Modules
 * Vercel
 
+All applications used for the development of this app were chosen out of ease-of-use and accessibility including free usage terms.
+
 ## API 
 * Open Library API was used as it's very user-friendly and quick to integrate
 * No API key is required for use and the database is vast and can be narrowed down if needed
@@ -154,3 +158,6 @@ Graduate Student, University of Florida
 *Expected 2026*
 
 ---
+
+## Re-submission
+This application was developed to satisfy the original assignment and re-submission requirements for the MMC6145 - Web Topics 3 final project.
