@@ -89,6 +89,7 @@ export default function Home(props) {
       const data = await response.json();
 
       if (response.ok) {
+        router.push("/");
         setSavedBooks((prev) => prev.filter((book) => book._id !== id));
         setMessage(data.message);
       } else {

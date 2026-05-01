@@ -160,4 +160,4 @@ Graduate Student, University of Florida
 ---
 
 ## Re-submission
-This application was developed to satisfy the original assignment and re-submission requirements for the MMC6145 - Web Topics 3 final project.
+This application was developed to satisfy the original assignment and re-submission requirements for the MMC6145 - Web Topics 3, final project.
