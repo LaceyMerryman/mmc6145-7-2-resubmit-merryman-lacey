@@ -122,6 +122,8 @@ export default function Home(props) {
           <form className={styles.form} onSubmit={handleSearch}>
             <input
               className={styles.input}
+              id="bookSearch"
+              name="bookSearch"
               type="text"
               value={searchTerm}
               onChange={(event) => setSearchTerm(event.target.value)}
