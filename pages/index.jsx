@@ -34,6 +34,8 @@ export default function Home(props) {
   const [message, setMessage] = useState("");
   const [savedTitles, setSavedTitles] = useState([]);
 
+  const getBookKey = (book) => `${book.title}-${book.author}`;
+
   async function handleSearch(event) {
     event.preventDefault();
 
@@ -65,7 +67,7 @@ export default function Home(props) {
       const data = await response.json();
 
       setMessage(data.message);
-      setSavedTitles([...savedTitles, book.title]);
+      setSavedTitles((prev) => [...prev, getBookKey(book)]);
       loadSavedBooks();
     } catch (error) {
       setMessage("Error saving book");
@@ -138,11 +140,11 @@ export default function Home(props) {
 
             <div className={styles.cardGrid}>
             {searchResults.map((book, index) => (
-              <div className={styles.bookCard} key={index}>
+              <div className={styles.bookCard} key={`${book.title}-${book.author}-${index}`}>
                 <h3>{book.title}</h3>
                 <p>{book.author}</p>
                 <button className={styles.button} type="button" onClick={() => saveBook(book)}>
-                {savedTitles.includes(book.title) ? "Saved!" : "Save Book"}
+                {savedTitles.includes(getBookKey(book)) ? "Saved!" : "Save Book"}
                 </button>
                 </div>
             ))}
