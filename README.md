@@ -52,8 +52,8 @@ Deployment & access with Vercel:
 1. Deploy your applicaiton by adding a new **Project** in Vercel. 
 2. You will need to import the Git Repository and possibly configure your GitHub Respository to allow access to Vercel.
 3. When your GitHub Repo populates in Vercel, select "Import".
-4. Deploy your app by selecting "Deploy"!
-5. Allow time to load and then update the environment variables (if needed).
+4. Add your environment variables (listed below) then deploy your app by selecting "Deploy"!
+5. Allow time to load then view your new site.
 6. Test the application is running smoothly. Troubleshoot any issues like missing environment variables or incorrect repository and begin using your website!
 
 ---

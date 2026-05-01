@@ -48,13 +48,13 @@ export default function Signup(props) {
   return (
     <div className={styles.container}>
       <Head>
-        <img src="/banner.jpg" alt="Book Banner" className={styles.banner} />
         <title>Book Saver</title>
         <meta name="description" content="A simple app for searching and saving books" />
         <link rel="icon" href="/BookSaverIcon.ico" />
       </Head>
 
       <main className={styles.main}>
+        <img src="/banner.jpg" alt="Book Banner" className={styles.banner} />
         <h1 className={styles.title}>
            Create your Book Saver account!</h1>
            <p className={styles.description}>

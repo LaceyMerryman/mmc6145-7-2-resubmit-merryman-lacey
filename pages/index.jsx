@@ -105,7 +105,6 @@ export default function Home(props) {
   return (
     <div className={styles.container}>
       <Head>
-        <img src="/banner.jpg" alt="Book Banner" className={styles.banner} />
         <title>Book Saver</title>
         <meta name="description" content="A simple app for searching and saving books" />
         <link rel="icon" href="/BookSaverIcon.ico" />
@@ -114,6 +113,7 @@ export default function Home(props) {
       <Header isLoggedIn={props.isLoggedIn} username={props?.user?.username} />
 
       <main className={styles.main}>
+        <img src="/banner.jpg" alt="Book Banner" className={styles.banner} />
         <h1 className={styles.title}>Book Saver</h1>
           
           <p className={styles.description}>
