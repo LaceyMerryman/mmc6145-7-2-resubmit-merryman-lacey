@@ -5,7 +5,7 @@
 ## Description:
 Are you ever asked, "What are you reading at the moment?" and suddenly, your mind goes completely blank???
 
-Then the Book Nook App is your new favorite app! Developed for those who can't seem to remember exactly *ALL* of the book titles or authors in their current reading list. 
+Then the Book Nook app is your new favorite application! Developed for those who can't seem to remember exactly *ALL* of the book titles or authors in their current reading list. 
 
 Users can create their own profile, search for titles and authors, save books to their Saved Books reading list, and delete books from their list if needed. 
 
@@ -15,11 +15,11 @@ Turn to your Book Nook when you need a little reminder of what you've read or wh
 ## Book Nook Brand Marks
 **Logo**
 
-![Image](public/BookNookLogo.png)
+![image](public/BookNookLogo.png)
 
 **Favicon**
 
-![Image](public/Favicon.png)
+![image](public/Favicon.png)
 
 **Color Scheme**
 
@@ -64,15 +64,15 @@ dark-mode:
 ![image](public/SearchPage.png)
 > When searching for a book, you need only enter the book title or author name and Book Nook will utilize OpenLibraryAPI to search for your book. 
 
-> Select "Save Book" when you'd like to add the book to your Saved Books.
+> Select **Save Book** when you'd like to add the book to your Saved Books reading list.
 
 ---
 **SAVED BOOKS**
 
 ![image](public/SavedBooks.png)
-> When the Save Book button is selected, the book will appear at the bottom of the page as a list. Users can delete any book they'd like if it was a mistake or they don't wish to keep it!
+> When the **Save Book** button is selected, the button with change to **Saved!** book will appear at the bottom of the page as a list. Users can delete any book they'd like if it was a mistake or they don't wish to keep it by selecting the **Delete** button in their Saved Books reading list.
 
-> Saved books will save after logging out of the user's session and loggin back in.
+> Saved books will continue to be saved after logging out of the user's session and logging back in.
 
 ---
 ## Installation Instructions
@@ -85,18 +85,18 @@ dark-mode:
 
 2. Open [http://localhost:3000](http://localhost:3000) to run the local dev server and see the application.
 
-**Deployment & access with Vercel:**
+**Deployment & Access with Vercel:**
 
 1. Deploy your application by adding a new **Project** in Vercel. 
 2. You will need to import the GitHub Repository and possibly configure your GitHub to allow all or select access to Vercel.
 3. When your GitHub Repository populates in Vercel, select **Import**.
 4. Add your environment variables (listed below) then deploy your app by selecting **Deploy**.
-5. Allow time to load then view your new site.
-6. Test the application is running smoothly. 
-7. Troubleshoot any issues like missing environment variables or DevTools errors then begin using your website!
+5. Allow time to load then view your new site with the provided domain.
+6. Test the application is running smoothly and enjoy.
+> Note: All further pushes to GitHub after Vercel deployment will update the Vercel application automatically unless you have automatic updates turned off.
 
 **Making Changes to App**
-1. If changes or updates are needed, utilize Visual Studio Code to make changes and push to Git before testing the Vercel app in production.
+1. Troubleshoot any issues like missing environment variables or DevTools errors within Visual Studio Code and push any changes to GitHub to see changes in Vercel production.
 2. Environment Variables are found below.
 
 ---
@@ -108,7 +108,7 @@ dark-mode:
 * **Saved Books:**  shows your listed saved books in order of addition
 * **Logout button:** logout of your experience until next time
 * **Styling:** enjoy the calm colors of the application, styled to be easy on the eyes similarly to reading
-* **API:** utilizes OpenLibraryAPI to search for books
+* **API:** utilizes OpenLibraryAPI to search for book titles and authors to save
 * **Mobile-Responsive:** the app will resize and respond to differing screen display sizes
 * **Dark-mode:** if a user prefers dark-mode, the app will respond appropriately with a dark-mode friendly display
 
@@ -148,6 +148,7 @@ All applications used for the development of this app were chosen out of ease-of
 * Add search filters
 * Add book cover images
 * Add affiliate links to external sites to purchase books
+* Be open to adding friends and sharing books
 
 ---
 ## Author
