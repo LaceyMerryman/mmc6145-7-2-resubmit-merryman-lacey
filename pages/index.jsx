@@ -51,6 +51,24 @@ export default function Home(props) {
     }
   }
 
+  async function saveBook(book) {
+    try {
+      const response = await fetch("/api/books", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(book),
+      });
+
+      const data = await response.json();
+
+      setMessage(data.message);
+    } catch (error) {
+      setMessage("Error saving book");
+    }
+  }
+
   return (
     <div className={styles.container}>
       <Head>
@@ -83,8 +101,15 @@ export default function Home(props) {
             {searchResults.map((book, index) => (
               <div key={index}>
                 <h3>{book.title}</h3>
-                <p>{book.author}</p></div>
+                <p>{book.author}</p>
+                <button type="button" onClick={() => saveBook(book)}>
+                  Save Book
+                </button>
+                </div>
             ))}
+
+            {message && <p>{message}</p>}
+
           </section>
       </main>
 
