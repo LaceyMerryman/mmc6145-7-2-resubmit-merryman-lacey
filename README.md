@@ -1,34 +1,107 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+![Image](public/banner.jpg)
 
-## Getting Started
+# Book Saver App
+## Description:
+Are you ever asked "What are you reading at the moment?" and suddenly, your mind goes completely blank?
 
-First, run the development server:
+The Book Saver App is your new favorite app! Developed for those who can't seem to remember exactly ALL of the book titles or authors in their current reading list. 
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+Users can search for titles and authors, save books to their Saved Books section, and delete books from their list if needed. 
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Turn to your Book Saver when you need a little reminder or when you're looking forward to the next great read!
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+---
+## Logo
+![Image](public/BookSaverIcon.png)
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+## Functions
+**Signup**
+![image](public/Signup.png)
+> New users may use the Signup page to create a new account in order to begin adding books to their Saved Books!
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+---
+**Login**
+![image](public/Login.png)
+> Users may use the Login page to login to their account to access their Saved Books section!
 
-## Learn More
+---
+**Book Saver Search**
+![image](public/BookSaverSearch.png)
+> When searching for a book, you need only enter the book title or author name and Book Saver will utilize OpenLibraryAPI to search for your book. 
 
-To learn more about Next.js, take a look at the following resources:
+> Select "Save Book" when you'd like to add the book to your Saved Books.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
+**Saved Books**
+![image](public/SavedBooks.png)
+> When the Save Book button is selected, the book will appear at the bottom of the page as a list. Users can delete any book they'd like if it was a mistake or they don't wish to keep it!
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+---
+## Installation Instructions
+If deploying locally:
+1. Run the development server:
 
-## Deploy on Vercel
+> `npm install`
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+> `npm run dev`
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+2. Open [http://localhost:3000](http://localhost:3000) to run the local dev server and see the application.
+
+Deployment & access with Vercel:
+
+1. Deploy your applicaiton by adding a new **Project** in Vercel. 
+2. You will need to import the Git Repository and possibly configure your GitHub Respository to allow access to Vercel.
+3. When your GitHub Repo populates in Vercel, select "Import".
+4. Deploy your app by selecting "Deploy"!
+5. Allow time to load and then update the environment variables (if needed).
+6. Test the application is running smoothly. Troubleshoot any issues like missing environment variables or incorrect repository and begin using your website!
+
+---
+## Features
+* **Home button:** takes user home
+* **Login:** login page for users with acounts
+* **Signup:** signup page for a new account
+* **Search bar:** search for titles or authors to add to your saved section
+* **Saved Books:**  shows your listed saved books in order of addition
+* **Logout:** logout of your experience until next time
+* **Styling:** enjoy the calm colors of the application, styled to be easy on the eyes
+* **API:** utilize OpenLibraryAPI to search for books
+
+---
+## Tech Stack
+* Next.js
+* MongoDB
+* React
+* Open Library API
+* CSS Modules
+* Vercel
+
+## API 
+* Open Library API was used as it's very user-friendly and quick to integrate. No API key is required for use and the database is vast and can be narrowed down if needed.
+
+---
+## Environment Variables
+>`MONGODB_URI=mongodb+srv://merrymanlacey_db_user:ZePrG4NdHOYBqpUh@cluster0.z5rwpoq.mongodb.net/book-app?retryWrites=true&w=majority`
+
+> `IRON_PASS=supersecurelongpassword1234567890abcd`
+
+> `NEXT_PUBLIC_APP_NAME=Book Save List`
+
+---
+## Future Improvements
+* Add Saved Books page
+* Be able to leave a review of each book
+* Be able to give a star rating to each book
+* Add read/unread status
+* Add search filters
+* Add book cover images
+
+---
+## Author
+**Lacey Merryman**
+
+Graduate Student, Unviersity of Florida
+
+*Expected 2026*
+
+---
