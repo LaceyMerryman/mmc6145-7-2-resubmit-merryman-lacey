@@ -63,13 +63,13 @@ Turn to your Book Saver when you need a little reminder or when you're looking f
 ---
 ## Features
 * **Home button:** takes user home
-* **Login:** login page for users with acounts
-* **Signup:** signup page for a new account
+* **Login button:** login page for users with acounts
+* **Signup button:** signup page for a new account
 * **Search bar:** search for titles or authors to add to your saved section
 * **Saved Books:**  shows your listed saved books in order of addition
-* **Logout:** logout of your experience until next time
-* **Styling:** enjoy the calm colors of the application, styled to be easy on the eyes
-* **API:** utilize OpenLibraryAPI to search for books
+* **Logout button:** logout of your experience until next time
+* **Styling:** enjoy the calm colors of the application, styled to be easy on the eyes similarly to reading
+* **API:** utilizes OpenLibraryAPI to search for books
 
 ---
 ## Tech Stack
@@ -81,7 +81,9 @@ Turn to your Book Saver when you need a little reminder or when you're looking f
 * Vercel
 
 ## API 
-* Open Library API was used as it's very user-friendly and quick to integrate. No API key is required for use and the database is vast and can be narrowed down if needed.
+* Open Library API was used as it's very user-friendly and quick to integrate
+* No API key is required for use and the database is vast and can be narrowed down if needed
+* Link: [OpenLibrary.org](https://openlibrary.org)
 
 ---
 ## Environment Variables
@@ -99,6 +101,7 @@ Turn to your Book Saver when you need a little reminder or when you're looking f
 * Add read/unread status
 * Add search filters
 * Add book cover images
+* Workshop new/catchy name for the app
 
 ---
 ## Author
