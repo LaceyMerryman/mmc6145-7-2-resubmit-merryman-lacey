@@ -64,7 +64,7 @@ export default function Dashboard(props) {
 
       <footer className={styles.footer}>
         <Image
-          src="/BookSaverIcon.png"
+          src="/BookNookLogo.png"
           alt="Book Nook Logo"
           width={60}
           height={60}
