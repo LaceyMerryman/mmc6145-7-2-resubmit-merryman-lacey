@@ -55,6 +55,12 @@ export default function Home(props) {
   }
 
   async function saveBook(book) {
+    if (!props.isLoggedIn) {
+      setMessage("Please log in to save books.");
+      router.push("/login");
+      return;
+    }
+
     try {
       const response = await fetch("/api/books", {
         method: "POST",
@@ -94,15 +100,22 @@ export default function Home(props) {
       const response = await fetch("/api/books");
       const data = await response.json();
 
-      setSavedBooks(data);
-      } catch (error) {
-      setMessage("Error loading saved books");
+      if (Array.isArray(data)) {
+        setSavedBooks(data);
+      } else {
+        setSavedBooks([]);
+        setMessage(data.message || "No saved books found.");
       }
+    } catch (error) {
+      setMessage("Error loading saved books");
+      setSavedBooks([]);
     }
+  }
 
     useEffect(() => {
-      loadSavedBooks();
-    }, []);
+      if (props.isLoggedIn) {}
+        loadSavedBooks();
+    }, [props.isLoggedIn]);
 
   return (
     <div className={styles.container}>
@@ -121,6 +134,24 @@ export default function Home(props) {
           <p className={styles.description}>
             Search for books and save titles to a simple reading list.</p>
 
+            {!props.isLoggedIn ? (
+              <section className={styles.section}>
+                <h2>Please log in or create an account to use Book Saver.</h2>
+
+                <Link href="/login">
+                  <button className={styles.button} type="button">
+                    Login
+                  </button>
+                </Link>
+
+                <Link href="/signup">
+                  <button className={styles.button} type="button">
+                    Sign Up
+                  </button>
+                </Link>
+              </section>
+            ) : (
+              <>
           <form className={styles.form} onSubmit={handleSearch}>
             <input
               className={styles.input}
@@ -171,6 +202,8 @@ export default function Home(props) {
             ))}
             </div>
             </section>
+            </>
+            )}
       </main>
 
       <footer className={styles.footer}>

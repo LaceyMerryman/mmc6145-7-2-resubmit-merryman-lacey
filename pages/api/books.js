@@ -1,7 +1,9 @@
 import dbConnect from '../../db/connection'
 import Book from '../../db/models/Book'
+import { withIronSessionApiRoute } from "iron-session/next";
+import sessionOptions from "../../config/session";
 
-export default async function handler(req, res) {
+async function handler(req, res) {
   await dbConnect();
 
   const { method, query } = req;
@@ -12,27 +14,38 @@ export default async function handler(req, res) {
         const response = await fetch(`https://openlibrary.org/search.json?q=${encodeURIComponent(query.q)}`);
         const data = await response.json();
 
-        const books = data.docs.slice(0,10).map((book) => ({
+        const books = data.docs.slice(0, 10).map((book) => ({
             title: book.title,
             author: book.author_name ? book.author_name[0] : 'Unknown author'
         }));
 
         return res.status(200).json(books);
-      } else {
-        const books = await Book.find();
-        return res.status(200).json(books);
-      }
+      } 
 
-    } catch (error) {
+        if (!req.session.user) {
+          return res.status(401).json([]);
+        }
+        const books = await Book.find({
+          username: req.session.user.username,
+        });
+
+        return res.status(200).json(books);
+      } catch (error) {
       return res.status(500).json({ error: 'Failed to fetch data' });
     }
   }
 
   if (method === 'POST') {
     try {
-      const bookData = req.body;
+          if (!req.session.user) {
+      return res.status(401).json({ message: "Pleaselog in to save books." })
+    }
 
-      const newBook = await Book.create(bookData);
+      const newBook = await Book.create({
+        title: req.body.title,
+        author: req.body.author,
+        username: req.session.user.username,
+      });
 
       return res.status(201).json({ message: 'Book saved successfully', data: newBook });
     } catch (error) {
@@ -42,9 +55,14 @@ export default async function handler(req, res) {
 
   if (method === 'DELETE') {
     try {
-      const { id } = req.query;
+      if (!req.sessions.user) {
+        return res.status(401).json({ message: "Please log in to delete books." })
+      }
     
-      await Book.findByIdAndDelete(id);
+      await Book.deleteOne({
+        _id: req.query.id,
+        username: req.session.user.username,
+      });
   
       return res.status(200).json({ message: 'Book deleted' });
     } catch (error) {
@@ -54,3 +72,5 @@ export default async function handler(req, res) {
 
   return res.status(405).json({ error: 'Method not allowed' });
 }
+
+  export default withIronSessionApiRoute(handler, sessionOptions);
