@@ -5,7 +5,7 @@
 ## Description:
 Are you ever asked, "What are you reading at the moment?" and suddenly, your mind goes completely blank???
 
-Then the Book Nook App is your new favorite app! Developed for those who can't seem to remember exactly ALL of the book titles or authors in their current reading list. 
+Then the Book Nook App is your new favorite app! Developed for those who can't seem to remember exactly *ALL* of the book titles or authors in their current reading list. 
 
 Users can create their own profile, search for titles and authors, save books to their Saved Books reading list, and delete books from their list if needed. 
 
@@ -26,16 +26,16 @@ Turn to your Book Nook when you need a little reminder of what you've read or wh
 light-mode:
 * Background: #f8f4ee (tan)
 * Buttons: #2f5d50 (green)
-* Text-color: #222 (grey/black)
+* Text color: #222 (grey/black)
 
 dark-mode:
 * Background: #000 (black)
 * Buttons: #2f5d50 (green)
-* Text-color: #f5f5f5 (white)
+* Text color: #f5f5f5 (white)
 
 ---
 ## Functions & App-flow
-**HOME PAGE**
+**GREETING PAGE**
 
 ![image](public/Home.png)
 > When accessing Book Nook, users are first taken to this starting page where they are prompted to login or sign up before they can begin searching and saving books to their reading list. 
@@ -44,7 +44,7 @@ dark-mode:
 **LOGIN PAGE**
 
 ![image](public/LoginPage.png)
-> Users may use the Login page to login to their account to access their Saved Books collection!
+> Users may use the Login page to login to their account to access their Saved Books collection! Users have an option to used their saved login info (if previously saved).
 
 ---
 **LOGIN to HOME**
@@ -85,22 +85,23 @@ dark-mode:
 
 **Deployment & access with Vercel:**
 
-1. Deploy your applicaiton by adding a new **Project** in Vercel. 
-2. You will need to import the Git Repository and possibly configure your GitHub Respository to allow access to Vercel.
-3. When your GitHub Repo populates in Vercel, select "Import".
-4. Add your environment variables (listed below) then deploy your app by selecting "Deploy"!
+1. Deploy your application by adding a new **Project** in Vercel. 
+2. You will need to import the GitHub Repository and possibly configure your GitHub to allow all or select access to Vercel.
+3. When your GitHub Repository populates in Vercel, select **Import**.
+4. Add your environment variables (listed below) then deploy your app by selecting **Deploy**.
 5. Allow time to load then view your new site.
-6. Test the application is running smoothly. Troubleshoot any issues like missing environment variables or incorrect repository and begin using your website!
+6. Test the application is running smoothly. 
+7. Troubleshoot any issues like missing environment variables or DevTools errors then begin using your website!
 
 **Making Changes to App**
 1. If changes or updates are needed, utilize Visual Studio Code to make changes and push to Git before testing the Vercel app in production.
-2. Environmental Variables are found below.
+2. Environment Variables are found below.
 
 ---
 ## Features
 * **Home button:** takes user home
-* **Login button:** login page for users with acounts
-* **Signup button:** signup page for a new account
+* **Login button:** routes users to the login page for users with acounts
+* **Signup button:** routes users to the signup page to create a new account
 * **Search bar:** search for titles or authors to add to your saved section
 * **Saved Books:**  shows your listed saved books in order of addition
 * **Logout button:** logout of your experience until next time
