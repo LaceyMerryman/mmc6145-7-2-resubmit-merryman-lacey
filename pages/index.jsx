@@ -74,7 +74,7 @@ export default function Home(props) {
 
       setMessage(data.message);
       setSavedTitles((prev) => [...prev, getBookKey(book)]);
-      loadSavedBooks();
+      setSavedBooks((prev) => [data.data, ...prev]);
     } catch (error) {
       setMessage("Error saving book");
     }
@@ -88,8 +88,12 @@ export default function Home(props) {
 
       const data = await response.json();
 
-      setMessage(data.message);
-      loadSavedBooks();
+      if (response.ok) {
+        setSavedBooks((prev) => prev.filter((book) => book._id !== id));
+        setMessage(data.message);
+      } else {
+        setMessage(data.message || "Error deleting book");
+      }
     } catch (error) {
       setMessage("Error deleting book")
     }
@@ -193,11 +197,8 @@ export default function Home(props) {
                 <h3>{book.title}</h3>
                 <p>{book.author}</p>
 
-                <button
-              className={styles.button}
-              type="button"
-              onClick={() => deleteBook(book._id)}>
-              Delete</button>
+                <button className={styles.button} type="button" onClick={() => deleteBook(book._id)}>
+                Delete</button>
               </div>
             ))}
             </div>

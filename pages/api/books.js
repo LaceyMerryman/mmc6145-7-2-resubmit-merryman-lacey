@@ -25,9 +25,10 @@ async function handler(req, res) {
         if (!req.session.user) {
           return res.status(401).json([]);
         }
+
         const books = await Book.find({
           username: req.session.user.username,
-        });
+        }).sort({ _id: -1 });
 
         return res.status(200).json(books);
       } catch (error) {
@@ -37,8 +38,8 @@ async function handler(req, res) {
 
   if (method === 'POST') {
     try {
-          if (!req.session.user) {
-      return res.status(401).json({ message: "Pleaselog in to save books." })
+      if (!req.session.user) {
+        return res.status(401).json({ message: "Pleaselog in to save books." });
     }
 
       const newBook = await Book.create({
@@ -55,8 +56,8 @@ async function handler(req, res) {
 
   if (method === 'DELETE') {
     try {
-      if (!req.sessions.user) {
-        return res.status(401).json({ message: "Please log in to delete books." })
+      if (!req.session.user) {
+        return res.status(401).json({ message: "Please log in to delete books." });
       }
     
       await Book.deleteOne({
