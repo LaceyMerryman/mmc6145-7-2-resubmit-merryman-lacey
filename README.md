@@ -12,7 +12,7 @@ Turn to your Book Nook when you need a little reminder or when you're looking fo
 
 ---
 ## Logo
-![Image](public/BookSaverIcon.png)
+![Image](public/BookNookLogo.png)
 
 ## Functions
 **Signup**
