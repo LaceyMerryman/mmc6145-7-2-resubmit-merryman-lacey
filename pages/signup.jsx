@@ -48,7 +48,7 @@ export default function Signup(props) {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Book Saver</title>
+        <title>Book Nook</title>
         <meta name="description" content="A simple app for searching and saving books" />
         <link rel="icon" href="/BookSaverIcon.ico" />
       </Head>
@@ -56,7 +56,7 @@ export default function Signup(props) {
       <main className={styles.main}>
         <img src="/banner.jpg" alt="Book Banner" className={styles.banner} />
         <h1 className={styles.title}>
-           Create your Book Saver account!</h1>
+           Create your Book Nook account!</h1>
            <p className={styles.description}>
             Sign up to start saving books to your reading list</p>
 
@@ -101,11 +101,11 @@ export default function Signup(props) {
       <footer className={styles.footer}>
         <Image
           src="/BookSaverIcon.png"
-          alt="Book Saver Logo"
+          alt="Book Nook Logo"
           width={60}
           height={60}
           />
-          <p>Book Saver</p>
+          <p>Book Nook</p>
       </footer>
     </div>
   );

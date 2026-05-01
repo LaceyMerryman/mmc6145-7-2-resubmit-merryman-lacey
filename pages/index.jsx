@@ -124,7 +124,7 @@ export default function Home(props) {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Book Saver</title>
+        <title>Book Nook</title>
         <meta name="description" content="A simple app for searching and saving books" />
         <link rel="icon" href="/BookSaverIcon.ico" />
       </Head>
@@ -133,15 +133,16 @@ export default function Home(props) {
 
       <main className={styles.main}>
         <img src="/banner.jpg" alt="Book Banner" className={styles.banner} />
-        <h1 className={styles.title}>Book Saver</h1>
+        <h1 className={styles.title}>Book Nook</h1>
           
           <p className={styles.description}>
             Search for books and save titles to a simple reading list.</p>
 
             {!props.isLoggedIn ? (
               <section className={styles.section}>
-                <h2>Please log in or create an account to use Book Saver.</h2>
+                <h2 className={styles.centerText}>Please log in or create an account to use Book Nook.</h2>
 
+                <div className={styles.authButtons}>
                 <Link href="/login">
                   <button className={styles.button} type="button">
                     Login
@@ -153,6 +154,7 @@ export default function Home(props) {
                     Sign Up
                   </button>
                 </Link>
+                </div>
               </section>
             ) : (
               <>
@@ -210,11 +212,11 @@ export default function Home(props) {
       <footer className={styles.footer}>
         <Image
           src="/BookSaverIcon.png"
-          alt="Book Saver Logo"
+          alt="Book Nook Logo"
           width={60}
           height={60}
           />
-          <p>Book Saver</p>
+          <p>Book Nook</p>
       </footer>
     </div>
   );

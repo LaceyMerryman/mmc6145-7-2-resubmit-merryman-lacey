@@ -49,6 +49,7 @@
 }
 
 .title {
+  text-align: center;
   margin: 0;
   line-height: 1.15;
   font-size: 4rem;
@@ -152,6 +153,17 @@
 .form>button:is(:hover, :focus, :active) {
   color: #fafafa;
   background-color: #222;
+}
+
+.centerText {
+  text-align: center;
+}
+
+.authButtons {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 16px;
 }
 
 .card:is(:hover, :focus, :active) {

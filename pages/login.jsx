@@ -53,7 +53,7 @@ export default function Login(props) {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Book Saver</title>
+        <title>Book Nook</title>
         <meta name="description" content="A simple app for searching and saving books" />
         <link rel="icon" href="/BookSaverIcon.ico" />
       </Head>
@@ -63,7 +63,7 @@ export default function Login(props) {
       <main className={styles.main}>
         <img src="/banner.jpg" alt="Book Banner" className={styles.banner} />
         <h1 className={styles.title}>
-          Welcome back to Book Saver!</h1>
+          Welcome back to Book Nook!</h1>
           <p className={styles.description}>
             Login below to continue building your reading list</p>
 
@@ -101,11 +101,11 @@ export default function Login(props) {
       <footer className={styles.footer}>
         <Image
           src="/BookSaverIcon.png"
-          alt="Book Saver Logo"
+          alt="Book Nook Logo"
           width={60}
           height={60}
           />
-          <p>Book Saver</p>
+          <p>Book Nook</p>
       </footer>
     </div>
   );
