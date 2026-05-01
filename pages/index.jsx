@@ -176,7 +176,7 @@ export default function Home(props) {
           width={60}
           height={60}
           />
-          <p>Booker Saver</p>
+          <p>Book Saver</p>
       </footer>
     </div>
   );
