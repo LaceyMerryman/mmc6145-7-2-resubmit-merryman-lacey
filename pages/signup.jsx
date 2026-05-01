@@ -80,7 +80,7 @@ export default function Signup(props) {
             type="password"
             name="password"
             id="password"
-            autoComplete="password"
+            autoComplete="new-password"
             onChange={handleChange}
             value={password}
           />
