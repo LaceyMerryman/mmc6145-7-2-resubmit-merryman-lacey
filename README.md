@@ -16,16 +16,19 @@ Turn to your Book Saver when you need a little reminder or when you're looking f
 
 ## Functions
 **Signup**
+
 ![image](public/Signup.png)
 > New users may use the Signup page to create a new account in order to begin adding books to their Saved Books!
 
 ---
 **Login**
+
 ![image](public/Login.png)
 > Users may use the Login page to login to their account to access their Saved Books section!
 
 ---
 **Book Saver Search**
+
 ![image](public/BookSaverSearch.png)
 > When searching for a book, you need only enter the book title or author name and Book Saver will utilize OpenLibraryAPI to search for your book. 
 
@@ -33,21 +36,22 @@ Turn to your Book Saver when you need a little reminder or when you're looking f
 
 ---
 **Saved Books**
+
 ![image](public/SavedBooks.png)
 > When the Save Book button is selected, the book will appear at the bottom of the page as a list. Users can delete any book they'd like if it was a mistake or they don't wish to keep it!
 
 ---
 ## Installation Instructions
-If deploying locally:
+**If deploying locally:**
 1. Run the development server:
 
-> `npm install`
+    > `npm install`
 
-> `npm run dev`
+    > `npm run dev`
 
 2. Open [http://localhost:3000](http://localhost:3000) to run the local dev server and see the application.
 
-Deployment & access with Vercel:
+**Deployment & access with Vercel:**
 
 1. Deploy your applicaiton by adding a new **Project** in Vercel. 
 2. You will need to import the Git Repository and possibly configure your GitHub Respository to allow access to Vercel.
@@ -81,7 +85,7 @@ Deployment & access with Vercel:
 
 ---
 ## Environment Variables
->`MONGODB_URI=mongodb+srv://merrymanlacey_db_user:ZePrG4NdHOYBqpUh@cluster0.z5rwpoq.mongodb.net/book-app?retryWrites=true&w=majority`
+> `MONGODB_URI=mongodb+srv://merrymanlacey_db_user:ZePrG4NdHOYBqpUh@cluster0.z5rwpoq.mongodb.net/book-app?retryWrites=true&w=majority`
 
 > `IRON_PASS=supersecurelongpassword1234567890abcd`
 
